@@ -1,0 +1,29 @@
+@import "../../../node_modules/pineapple-sass/build/pineapple-sass";
+@import "../../assets/config/colors";
+
+.characters {
+  background-color: $color-darkgrey;
+  color: $color-white;
+  ul {
+    padding: 40px;
+    margin: 0 auto;
+    width: 1170px;
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: 180px;
+      margin-right: 40px;
+      img {
+        width: 100%;
+      }
+      .info {
+          margin: 20px 0;
+      }
+    }
+  }
+}

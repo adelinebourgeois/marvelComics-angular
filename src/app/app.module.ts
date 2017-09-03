@@ -10,12 +10,18 @@ import { ComicsComponent } from './comics/comics.component';
 import { ComicComponent } from './comic/comic.component';
 
 import { routes } from './routes';
+import { StorieComponent } from './storie/storie.component';
+import { CharactersComponent } from './characters/characters.component';
+import { AllCharactersComponent } from './all-characters/all-characters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComicsComponent,
-    ComicComponent
+    ComicComponent,
+    StorieComponent,
+    CharactersComponent,
+    AllCharactersComponent
   ],
   imports: [
     BrowserModule,

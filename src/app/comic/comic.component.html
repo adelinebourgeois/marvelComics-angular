@@ -1,15 +1,18 @@
-<h1>Liste</h1>
-<ul>
-  <li *ngFor="let detail of comic">
-      <img [src]="detail.thumbnail.path + '.' + detail.thumbnail.extension"/>
-    <p>{{detail.title}}</p>
-    <p>{{detail.issueNumber}}</p>
-  </li>
-</ul>
-<ul>
-  <li *ngFor="let character of characters">
-    <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension"/>
-    <p>{{ character.name }}</p>
-    <p>{{ character.description }}</p>
-  </li>
-</ul>
+<section class="item_listing">
+
+  <!-- DETAILS -->
+    <div *ngFor="let detail of comic">
+      <div>
+        <img [src]="detail.thumbnail.path + '.' + detail.thumbnail.extension"/>
+      </div>
+      <div class="info">
+        <p>{{detail.title}}</p>
+        <!--<p>#{{detail.issueNumber}}</p>-->
+      </div>
+    </div>
+
+  <comic-storie></comic-storie>
+
+</section>
+
+<comic-characters></comic-characters>

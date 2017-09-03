@@ -33,6 +33,18 @@ export class MarvelService {
         .catch(this.handleError);
   }
 
+    public getComicDetailStories(id: number): Observable<any[]> {
+        return this.http.get(`${this.baseUrl}comics/${id}/stories?apikey=${this.publicKey}&hash=${this.hash}`)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    public getAllCharacters(): Observable<any[]> {
+        return this.http.get(`${this.baseUrl}characters?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
   extractData(res: Response) {
     let body = res.json();
     console.log(body.data.results);

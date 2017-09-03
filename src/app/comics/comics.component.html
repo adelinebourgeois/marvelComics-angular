@@ -1,9 +1,12 @@
-<h1>Liste</h1>
-<ul class="grid_3">
-  <li *ngFor="let comic of comics">
-      <a [href]="'/comic/' + comic.id">
-        <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension"/>
-      </a>
-    <p>{{comic.title}}</p>
-  </li>
-</ul>
+<section class="item_listing">
+    <ul>
+        <h1>Comics disponibles en versions numériques</h1>
+        <li *ngFor="let comic of comics">
+            <a href="/comic/{{comic.id}}">
+                <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>
+            </a>
+            <p>{{comic.title}}</p>
+            <a href="/comic/{{comic.id}}" class="detail button">Détails</a>
+        </li>
+    </ul>
+</section>

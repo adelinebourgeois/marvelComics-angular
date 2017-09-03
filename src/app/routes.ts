@@ -1,6 +1,7 @@
 import {Routes} from "@angular/router";
 import {ComicsComponent} from "./comics/comics.component";
 import {ComicComponent} from "./comic/comic.component";
+import {AllCharactersComponent} from "./all-characters/all-characters.component";
 
 export const routes: Routes = [
     {
@@ -11,7 +12,12 @@ export const routes: Routes = [
         component: ComicsComponent
     },
     {
-        path: 'comic/:id', component: ComicComponent
-    }
+        path: 'comic/:id',
+        component: ComicComponent
+    },
+    {
+        path: 'characters',
+        component: AllCharactersComponent
+    },
 ];
 

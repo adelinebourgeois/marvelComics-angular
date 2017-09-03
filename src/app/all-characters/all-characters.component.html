@@ -1,0 +1,12 @@
+<section class="item_listing">
+  <ul>
+    <h1>Characters</h1>
+    <li *ngFor="let character of characters">
+      <a href="/character/{{character.id}}">
+        <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"/>
+      </a>
+      <p>{{character.name}}</p>
+      <a href="/character/{{character.id}}" class="detail button">Détails</a>
+    </li>
+  </ul>
+</section>

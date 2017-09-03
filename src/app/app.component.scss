@@ -1,0 +1,35 @@
+@import "../assets/config/colors";
+
+header {
+    background-color: $color-black;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    img {
+        display: inline-block;
+        width: 200px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        display: block;
+        background: repeating-linear-gradient(-45deg, transparent, transparent 10px, #ccc 10px, #ccc 11px);
+    }
+    nav {
+        position: absolute;
+        top: 8%;
+        display: inline-block;
+        a {
+            font-size: 1.6rem;
+            color: $color-lightgrey;
+            transition: color .15s ease-in-out;
+            text-transform: uppercase;
+            &:hover, &:active {
+                color: $color-white;
+            }
+        }
+
+    }
+}
