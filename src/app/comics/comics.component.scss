@@ -1,19 +1,20 @@
 @import "../../../node_modules/pineapple-sass/build/pineapple-sass";
 @import "../../assets/config/colors";
+@import "../../assets/config/sizes";
 
-.item_listing {
-  width: 1170px;
-  margin: 0 auto;
-  h1 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 4.0rem;
-  }
-  ul {
-    padding: 40px 0;
-    margin: 0;
+section {
+  background-color: $color-white;
+  ul.container-width {
+    background-color: $color-white;
+    padding: 115px 0;
     list-style: none;
     text-align: center;
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 4.0rem;
+      margin-bottom: 20px;
+    }
     li {
       padding: 5px;
       width: 235px;
@@ -23,6 +24,11 @@
       font-size: 1.0rem;
       display: inline-block;
       vertical-align: top;
+      @media #{$mobile} {
+        padding: 0;
+        margin: 0;
+        width: auto;
+      }
       a {
         img {
           width: 100%;
@@ -36,6 +42,7 @@
           color: $color-white;
           font-size: 1.5rem;
           display: block;
+          margin: 0 0 40px 0;
           padding: 11px 19px;
           text-align: center;
           text-transform: uppercase;
@@ -62,3 +69,4 @@
     }
   }
 }
+

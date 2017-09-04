@@ -1,3 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'assets/config/reset.scss';
+@import 'assets/config/colors.scss';
+@import 'assets/config/sizes.scss';
+@import "~pineapple-sass";
+
+body {
+  &:after{
+    background-image: url('assets/img/background.jpg');
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+    @include grayscale(1);
+  }
+  img {
+    width: 100%;
+  }
+  .navbar{
+    .container-fluid {
+      > a {
+        position: relative;
+        float: left;
+        margin-right: 15px;
+        width: 11%;
+        @media #{$mobile} {
+          position: absolute;
+          top: 0;
+          width: 30%;
+        }
+      }
+    }
+
+  }
+}

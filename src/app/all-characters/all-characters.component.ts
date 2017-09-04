@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MarvelService} from "../service/marvel.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'comic-all-characters',
@@ -9,7 +10,9 @@ import {MarvelService} from "../service/marvel.service";
 export class AllCharactersComponent implements OnInit {
     public characters = [];
 
-    constructor(private marvelService: MarvelService) { }
+    constructor(private marvelService: MarvelService) {
+
+    }
 
     ngOnInit() {
         this.marvelService.getAllCharacters().subscribe(characters => this.characters = characters);

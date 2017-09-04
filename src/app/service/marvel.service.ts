@@ -45,6 +45,12 @@ export class MarvelService {
             .catch(this.handleError);
     }
 
+    public getCharacter(id: number): Observable<any[]> {
+        return this.http.get(`${this.baseUrl}characters/${id}?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
   extractData(res: Response) {
     let body = res.json();
     console.log(body.data.results);

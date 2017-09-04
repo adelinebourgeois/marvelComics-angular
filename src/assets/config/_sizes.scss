@@ -1,0 +1,26 @@
+/* Container sizes */
+
+$mainDesktopContainerSize: 1170px;
+$mainMobileContainerSize: calc( 100% - 20px );
+$gutterItemsListing: 40px;
+
+$desktop: "screen and (min-width:980px)";
+$mobile: "screen and (max-width:979px)";
+
+@mixin mainDesktopContainer() {
+  width: $mainDesktopContainerSize;
+  margin: 0 auto;
+}
+@mixin mainMobileContainer() {
+  width: $mainMobileContainerSize;
+  margin: 0 auto;
+}
+
+.container-width {
+  @media #{$desktop}  {
+    @include mainDesktopContainer;
+  }
+  @media #{$mobile} {
+    @include mainMobileContainer;
+  }
+}

@@ -13,6 +13,7 @@ import { routes } from './routes';
 import { StorieComponent } from './storie/storie.component';
 import { CharactersComponent } from './characters/characters.component';
 import { AllCharactersComponent } from './all-characters/all-characters.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AllCharactersComponent } from './all-characters/all-characters.componen
     ComicComponent,
     StorieComponent,
     CharactersComponent,
-    AllCharactersComponent
+    AllCharactersComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
