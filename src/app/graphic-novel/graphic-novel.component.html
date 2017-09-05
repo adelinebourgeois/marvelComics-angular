@@ -1,0 +1,20 @@
+<!-- Container one comic -->
+
+<section class="container-width">
+
+  <!-- DETAILS -->
+  <div *ngFor="let detail of graphic">
+    <div>
+      <img [src]="detail.thumbnail.path + '.' + detail.thumbnail.extension"/>
+    </div>
+    <div class="info">
+      <p>{{detail.title}}</p>
+      <div class="story">
+        <p>{{detail.description}}</p>
+      </div>
+      <comic-storie></comic-storie>
+    </div>
+  </div>
+</section>
+
+<graphic-novel-characters></graphic-novel-characters>

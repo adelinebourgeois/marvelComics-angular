@@ -1,0 +1,14 @@
+<section>
+  <ul class="container-width">
+    <h1>Graphics Novels</h1>
+    <li *ngFor="let graphic of graphics | paginate: { itemsPerPage: 20, currentPage: p }">
+      <a href="/graphic-novel/{{graphic.id}}">
+        <img src="{{graphic.thumbnail.path}}.{{graphic.thumbnail.extension}}"/>
+      </a>
+      <p>{{graphic.title}}</p>
+      <a href="/graphic-novel/{{graphic.id}}" class="detail button">Détails</a>
+    </li>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </ul>
+
+</section>

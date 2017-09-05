@@ -9,6 +9,7 @@ import {MarvelService} from "../service/marvel.service";
 })
 export class ComicsComponent implements OnInit {
   public comics = [];
+  p: number = 1;
 
   constructor(private marvelService: MarvelService) { }
 

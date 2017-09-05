@@ -4,8 +4,6 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
 
 
-
-
 @Injectable()
 export class MarvelService {
   private publicKey = '62ab7bb3c3875389d0380b111a03bd03';
@@ -16,7 +14,7 @@ export class MarvelService {
 
 
   public getAllComics(): Observable<any[]> {
-    return this.http.get(`${this.baseUrl}comics?ts=1&hasDigitalIssue=true&apikey=${this.publicKey}&hash=${this.hash}`)
+    return this.http.get(`${this.baseUrl}comics?ts=1&limit=100&hasDigitalIssue=true&apikey=${this.publicKey}&hash=${this.hash}`)
         .map(this.extractData)
         .catch(this.handleError);
   }
@@ -28,25 +26,39 @@ export class MarvelService {
   }
 
   public getComicDetailCharacters(id: number): Observable<any[]> {
-    return this.http.get(`${this.baseUrl}comics/${id}/characters?apikey=${this.publicKey}&hash=${this.hash}`)
+    return this.http.get(`${this.baseUrl}comics/${id}/characters?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
         .map(this.extractData)
         .catch(this.handleError);
   }
 
     public getComicDetailStories(id: number): Observable<any[]> {
-        return this.http.get(`${this.baseUrl}comics/${id}/stories?apikey=${this.publicKey}&hash=${this.hash}`)
+        return this.http.get(`${this.baseUrl}comics/${id}/stories?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
     public getAllCharacters(): Observable<any[]> {
-        return this.http.get(`${this.baseUrl}characters?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
+        return this.http.get(`${this.baseUrl}characters?ts=1&limit=100&apikey=${this.publicKey}&hash=${this.hash}`)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
-    public getCharacter(id: number): Observable<any[]> {
-        return this.http.get(`${this.baseUrl}characters/${id}?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
+    /* GRAPHIC NOVEL */
+
+    public getAllGraphicNovel(): Observable<any[]> {
+        return this.http.get(`${this.baseUrl}comics?ts=1&limit=100&format=graphic%20novel&orderBy=-title&apikey=${this.publicKey}&hash=${this.hash}`)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    public getGraphicNovelDetail(id: number): Observable<any[]> {
+        return this.http.get(`${this.baseUrl}comics/${id}?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    public getGraphicNovelDetailCharacters(id: number): Observable<any[]> {
+        return this.http.get(`${this.baseUrl}comics/${id}/characters?ts=1&apikey=${this.publicKey}&hash=${this.hash}`)
             .map(this.extractData)
             .catch(this.handleError);
     }

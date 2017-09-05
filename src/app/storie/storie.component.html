@@ -1,7 +1,4 @@
 <!-- STORY -->
-<div class="story">
-  <div *ngFor="let storie of stories">
-    <h2 *ngIf="storie.description">Story</h2>
+<div class="story" *ngFor="let storie of stories">
     <p>{{ storie.description }}</p>
-  </div>
 </div>
