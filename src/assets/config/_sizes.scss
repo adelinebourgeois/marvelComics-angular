@@ -1,16 +1,23 @@
 /* Container sizes */
 
 $mainDesktopContainerSize: 1170px;
+$mainTabletteContainerSize: 860px;
 $mainMobileContainerSize: calc( 100% - 20px );
 $gutterItemsListing: 40px;
 
-$desktop: "screen and (min-width:720px)";
-$mobile: "screen and (max-width:710px)";
+$desktop: "screen and (min-width:1170px)";
+$tablette: "screen and (min-width:768px) and (max-width: 1170px)";
+$mobile: "screen and (max-width:767px)";
 
 $landscape: "(orientation: landscape)";
+$portrait: "(orientation: portrait)";
 
 @mixin mainDesktopContainer() {
   width: $mainDesktopContainerSize;
+  margin: 0 auto;
+}
+@mixin mainTabletteContainer() {
+  width: $mainTabletteContainerSize;
   margin: 0 auto;
 }
 @mixin mainMobileContainer() {
@@ -21,6 +28,9 @@ $landscape: "(orientation: landscape)";
 .container-width {
   @media #{$desktop}  {
     @include mainDesktopContainer;
+  }
+  @media #{$tablette} {
+    @include mainTabletteContainer;
   }
   @media #{$mobile} {
     @include mainMobileContainer;

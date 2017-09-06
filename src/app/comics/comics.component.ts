@@ -13,6 +13,10 @@ export class ComicsComponent implements OnInit {
 
   constructor(private marvelService: MarvelService) { }
 
+    scroll(){ // click handler
+        window.scrollTo(0, 0);
+    }
+
   ngOnInit() {
     this.marvelService.getAllComics().subscribe(comics => this.comics = comics);
   }

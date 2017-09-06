@@ -21,6 +21,20 @@ body {
       @include grayscale(1);
     }
   }
+  @media #{$tablette} {
+    &:after{
+      background-image: url('assets/img/background.jpg');
+      content: "";
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+      @include grayscale(1);
+    }
+  }
   h1 {
     text-align: center;
     font-weight: 700;
@@ -103,6 +117,19 @@ body {
         z-index: -1;
         @include skew(-60, 0);
       }
+      @media #{$tablette} {
+        content: " ";
+        background: #ffffff;
+        border-left: 8px solid $color-black;
+        border-right: 8px solid $color-black;
+        position: absolute;
+        top: 0;
+        left: -160px;
+        right: -160px;
+        bottom: 0;
+        z-index: -1;
+        @include skew(-60, 0);
+      }
     }
     > div {
       margin: 130px 0 55px 0;
@@ -130,12 +157,15 @@ body {
           @media #{$mobile} {
             font-size: 2.5rem;
           }
+          @media  #{$tablette}{
+            font-size: 3.0rem;
+          }
         }
         /* story comic*/
         div.story {
           margin: 30px 0 0 0 !important;
           p {
-            font-size: 2.0rem !important;
+            font-size: 1.5rem !important;
             line-height: 25px !important;
           }
         }

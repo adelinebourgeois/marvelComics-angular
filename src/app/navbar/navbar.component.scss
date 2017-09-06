@@ -5,23 +5,26 @@
 .navbar{
   .container-fluid {
     #logo {
+      a img {
+        height: 65px;
+      }
+      @media #{$desktop}{
+        float: left;
+      }
+      @media #{$tablette} {
+        float: left;
+      }
       display: inline-block;
-      width: 10%;
-      @media #{$mobile} {
-        width: 40%;
-      }
-      @media #{$mobile} and #{$landscape} {
-        width: 20%;
-      }
     }
     .navbar-header {
       float: right;
     }
     .navbar-collapse {
       @media #{$desktop} {
-        position: absolute;
-        top: 52%;
-        left: 11%;
+        float: left;
+      }
+      @media #{$tablette}{
+        float: left;
       }
     }
   }

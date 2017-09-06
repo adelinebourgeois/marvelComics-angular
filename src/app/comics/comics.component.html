@@ -8,6 +8,6 @@
             <p>{{comic.title}}</p>
             <a href="/comic/{{comic.id}}" class="detail button">Détails</a>
         </li>
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls (click)="scroll()" (pageChange)="p = $event " ></pagination-controls>
     </ul>
 </section>
