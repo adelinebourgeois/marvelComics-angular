@@ -6,40 +6,29 @@
 @import "~pineapple-sass";
 
 body {
-  &:after{
-    background-image: url('assets/img/background.jpg');
-    content: "";
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -2;
-    @include grayscale(1);
+  background-color: $color-white;
+  @media #{$desktop} {
+    &:after{
+      background-image: url('assets/img/background.jpg');
+      content: "";
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -2;
+      @include grayscale(1);
+    }
   }
   h1 {
     text-align: center;
     font-weight: 700;
     font-size: 4.0rem;
+    margin-bottom: 20px;
   }
   img {
     width: 100%;
-  }
-  .navbar{
-    .container-fluid {
-      > a {
-        position: relative;
-        float: left;
-        margin-right: 15px;
-        width: 11%;
-        @media #{$mobile} {
-          position: absolute;
-          top: 0;
-          width: 30%;
-        }
-      }
-    }
   }
   /* comics et all-characters*/
   ul.container-width {
@@ -47,7 +36,7 @@ body {
     padding: 115px 0;
     list-style: none;
     text-align: center;
-    li {
+    > li {
       padding: 5px;
       width: 235px;
       height: auto;
@@ -58,8 +47,6 @@ body {
       vertical-align: top;
       @media #{$mobile} {
         padding: 0;
-        margin: 0;
-        width: auto;
       }
       a {
         &.button {
@@ -95,32 +82,35 @@ body {
         text-overflow: ellipsis;
       }
     }
+    /* pagination */
+    .ngx-pagination .current {
+      background: $color-red;
+    }
   }
   /* comic & graphic-novel detail */
   section.container-width{
     &:before {
-      content: " ";
-      background: #ffffff;
-      border-left: 8px solid $color-black;
-      border-right: 8px solid $color-black;
-      position: absolute;
-      top: 0;
-      left: -50px;
-      right: -50px;
-      bottom: 0;
-      z-index: -1;
-      @include skew(-60, 0);
-      @media #{$mobile} {
-        @include skew(-60, 12);
+      @media #{$desktop} {
+        content: " ";
+        background: #ffffff;
+        border-left: 8px solid $color-black;
+        border-right: 8px solid $color-black;
+        position: absolute;
+        top: 0;
+        left: -50px;
+        right: -50px;
+        bottom: 0;
+        z-index: -1;
+        @include skew(-60, 0);
       }
     }
-    >div {
+    > div {
       margin: 130px 0 55px 0;
-      div:first-child {
+      > div{
         display: inline-block;
         width: 26%;
         @media #{$mobile} {
-          width: 50%;
+          width: 100%;
         }
       }
       div.info {
@@ -128,6 +118,10 @@ body {
         margin-left: 30px;
         vertical-align: top;
         width: 40%;
+        @media #{$mobile} {
+          margin-left: 0;
+          width: 100%;
+        }
         /* title comic */
         p {
           font-weight: 700;

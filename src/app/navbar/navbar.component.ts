@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  public isIn: boolean;
+  public isIn: boolean = false;
 
   constructor() { }
 
@@ -16,9 +16,8 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.isIn = false;   // store state
+      this.isIn = false;
       this.toggleState();
-
   }
 
 }

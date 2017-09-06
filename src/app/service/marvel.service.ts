@@ -65,14 +65,12 @@ export class MarvelService {
 
   extractData(res: Response) {
     let body = res.json();
-    console.log(body.data.results);
     return body.data.results || {};
   }
 
   handleError(error: any){
     let errorMsg = (error.message) ? error.message:
         error.status ? `${error.status} - ${error.statusText}` : 'server error';
-        console.log(errorMsg);
         return Observable.throw(errorMsg);
   }
 

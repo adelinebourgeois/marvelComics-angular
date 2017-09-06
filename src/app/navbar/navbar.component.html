@@ -1,5 +1,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
+    <div id="logo">
+      <a routerLink='/'>
+        <img src="../assets/img/marvel-logo.png">
+      </a>
+    </div>
     <div class="navbar-header">
       <button type="button"
               class="navbar-toggle collapsed"
@@ -10,11 +15,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <a routerLink='/'>
-      <img src="../assets/img/marvel-logo.png">
-    </a>
-    <div class="collapse navbar-collapse"
-         [ngClass]="{ 'in': isIn }">
+    <div class="collapse navbar-collapse" [ngClass]="{ 'in': isIn }">
       <ul class="nav navbar-nav">
         <li><a  routerLink="/comics">Comics digital</a></li>
         <li><a  routerLink="/graphics-novel">Graphics Novel</a></li>
