@@ -6,17 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  public isIn: boolean = false;
+  public isIn: boolean;
 
   constructor() { }
 
-  toggleState(){ // click handler
+  /*  Menu burger click*/
+  toggleState(){
       let bool = this.isIn;
       this.isIn = bool === false ? true : false;
   }
 
   ngOnInit() {
-      this.isIn = false;
+      this.isIn = true;
       this.toggleState();
   }
 

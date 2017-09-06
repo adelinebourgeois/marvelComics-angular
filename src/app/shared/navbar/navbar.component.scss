@@ -1,6 +1,6 @@
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import "../../assets/config/sizes";
+@import "../../../assets/config/sizes";
 
 .navbar{
   .container-fluid {
@@ -25,6 +25,13 @@
       }
       @media #{$tablette}{
         float: left;
+      }
+      .navbar-nav {
+        li {
+          a {
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }

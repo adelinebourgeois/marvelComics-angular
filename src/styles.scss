@@ -4,6 +4,7 @@
 @import 'assets/config/colors.scss';
 @import 'assets/config/sizes.scss';
 @import "~pineapple-sass";
+@import '~materialize-css/dist/css/materialize.min.css';
 
 body {
   background-color: $color-white;
@@ -39,7 +40,7 @@ body {
     text-align: center;
     font-weight: 700;
     font-size: 4.0rem;
-    margin-bottom: 20px;
+    margin-bottom: $gutterItemsListing;
   }
   img {
     width: 100%;
@@ -50,11 +51,13 @@ body {
     padding: 115px 0;
     list-style: none;
     text-align: center;
+    .center {
+      margin: 70px;
+    }
     > li {
-      padding: 5px;
       width: 235px;
       height: auto;
-      margin: 20px;
+      margin: $gutterItemsListing;
       font-weight: bold;
       font-size: 1.0rem;
       display: inline-block;
@@ -132,7 +135,7 @@ body {
       }
     }
     > div {
-      margin: 130px 0 55px 0;
+      margin: 130px 0 50px 0;
       > div{
         display: inline-block;
         width: 26%;
@@ -142,12 +145,15 @@ body {
       }
       div.info {
         display: inline-block;
-        margin-left: 30px;
+        margin-left: $gutterItemsListing;
         vertical-align: top;
         width: 40%;
         @media #{$mobile} {
           margin-left: 0;
           width: 100%;
+        }
+        @media #{$tablette} {
+          width: 65%;
         }
         /* title comic */
         p {
@@ -180,7 +186,7 @@ body {
     color: $color-white;
     .container-width{
       ul{
-        padding: 40px;
+        padding: 40px 0 0 0;
         h2 {
           font-size: 2.5rem;
           font-weight: 700;
@@ -190,7 +196,7 @@ body {
           display: inline-block;
           vertical-align: top;
           width: 180px;
-          margin-right: 40px;
+          margin-right: $gutterItemsListing;
           img {
             height: 185px;
           }

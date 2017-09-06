@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MarvelService} from "../service/marvel.service";
+import {MarvelService} from "../../service/marvel.service";
 
 
 @Component({
@@ -10,15 +10,21 @@ import {MarvelService} from "../service/marvel.service";
 export class ComicsComponent implements OnInit {
   public comics = [];
   p: number = 1;
+  loading: boolean = false;
 
   constructor(private marvelService: MarvelService) { }
 
-    scroll(){ // click handler
-        window.scrollTo(0, 0);
-    }
+  scroll() {
+      window.scrollTo(0, 0);
+  }
 
   ngOnInit() {
-    this.marvelService.getAllComics().subscribe(comics => this.comics = comics);
+    this.loading = true;
+    this.marvelService.getAllComics().subscribe(comics => {
+      this.comics = comics;
+      this.loading = false;
+    }, () => this.loading = false);
+
   }
 
 }

@@ -1,6 +1,10 @@
 <section>
+
     <ul class="container-width">
         <h1>Digital Comics</h1>
+        <div class="center">
+            <app-loader [loading]="loading"></app-loader>
+        </div>
         <li *ngFor="let comic of comics | paginate: { itemsPerPage: 20, currentPage: p }">
             <a href="/comic/{{comic.id}}">
                 <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"/>
@@ -8,6 +12,8 @@
             <p>{{comic.title}}</p>
             <a href="/comic/{{comic.id}}" class="detail button">Détails</a>
         </li>
+
         <pagination-controls (click)="scroll()" (pageChange)="p = $event " ></pagination-controls>
+
     </ul>
 </section>

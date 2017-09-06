@@ -12,15 +12,18 @@ import { AppComponent } from './app.component';
 
 import {MarvelService} from "./service/marvel.service";
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { ComicsComponent } from './comics/comics.component';
-import { ComicComponent } from './comic/comic.component';
-import { StorieComponent } from './storie/storie.component';
-import { CharactersComponent } from './characters/characters.component';
-import { AllCharactersComponent } from './all-characters/all-characters.component';
-import { GraphicsNovelComponent } from './graphics-novel/graphics-novel.component';
-import { GraphicNovelComponent } from './graphic-novel/graphic-novel.component';
-import { GraphicNovelCharactersComponent } from './graphic-novel-characters/graphic-novel-characters.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ComicsComponent } from './ComicsComponents/comics/comics.component';
+import { ComicComponent } from './ComicsComponents/comic/comic.component';
+import { StorieComponent } from './ComicsComponents/storie/storie.component';
+import { CharactersComponent } from './ComicsComponents/characters/characters.component';
+import { AllCharactersComponent } from './CharactersComponents/all-characters/all-characters.component';
+import { GraphicsNovelComponent } from './GraphicsNovelComponenents/graphics-novel/graphics-novel.component';
+import { GraphicNovelComponent } from './GraphicsNovelComponenents/graphic-novel/graphic-novel.component';
+import { GraphicNovelCharactersComponent } from './GraphicsNovelComponenents/graphic-novel-characters/graphic-novel-characters.component';
+import {LoaderComponent} from "./shared/loader/loader.component";
+
+
 
 
 @NgModule({
@@ -35,13 +38,15 @@ import { GraphicNovelCharactersComponent } from './graphic-novel-characters/grap
     GraphicsNovelComponent,
     GraphicNovelComponent,
     GraphicNovelCharactersComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot( routes ),
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   providers: [MarvelService],
   bootstrap: [AppComponent]
