@@ -1,12 +1,15 @@
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 @import "../../../assets/config/sizes";
+@import "../../../assets/config/colors";
 
 .navbar{
+  height: 65px;
   .container-fluid {
     #logo {
       a img {
         height: 65px;
+        width: 140px;
       }
       @media #{$desktop}{
         float: left;
@@ -31,6 +34,16 @@
           a {
             font-size: 1.5rem;
           }
+        }
+      }
+      &.in {
+        @media #{$mobile} {
+          background-color: $color-nav;
+          margin-top: -27px;
+        }
+        @media #{$tablette2} {
+          background-color: $color-nav;
+          margin-top: -27px;
         }
       }
     }

@@ -1,13 +1,15 @@
 /* Container sizes */
 
 $mainDesktopContainerSize: 1170px;
-$mainTabletteContainerSize: 860px;
+$mainTabletteContainerSize: calc(100% - 60px);;
+$mainTablette2ContainerSize: calc( 100% - 40px );
 $mainMobileContainerSize: calc( 100% - 20px );
 $gutterItemsListing: 20px;
 
 $desktop: "screen and (min-width:1281px)";
 $tablette: "screen and (min-width:765px) and (max-width: 1280px)";
-$mobile: "screen and (max-width:764px)";
+$tablette2: "screen and (min-width:381px) and (max-width: 764px)";
+$mobile: "screen and (max-width:380px)";
 
 $landscape: "(orientation: landscape)";
 $portrait: "(orientation: portrait)";
@@ -18,6 +20,10 @@ $portrait: "(orientation: portrait)";
 }
 @mixin mainTabletteContainer() {
   width: $mainTabletteContainerSize;
+  margin: 0 auto;
+}
+@mixin mainTablette2Container() {
+  width: $mainTablette2ContainerSize;
   margin: 0 auto;
 }
 @mixin mainMobileContainer() {
@@ -31,6 +37,9 @@ $portrait: "(orientation: portrait)";
   }
   @media #{$tablette} {
     @include mainTabletteContainer;
+  }
+  @media #{$tablette2} {
+    @include mainTablette2Container;
   }
   @media #{$mobile} {
     @include mainMobileContainer;

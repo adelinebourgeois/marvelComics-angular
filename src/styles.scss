@@ -139,6 +139,10 @@ body {
       > div{
         display: inline-block;
         width: 26%;
+        @media #{$tablette2} {
+          display: block;
+          width: 50%;
+        }
         @media #{$mobile} {
           width: 100%;
         }
@@ -147,13 +151,17 @@ body {
         display: inline-block;
         margin-left: $gutterItemsListing;
         vertical-align: top;
-        width: 40%;
+        min-width: 55%;
         @media #{$mobile} {
           margin-left: 0;
           width: 100%;
         }
         @media #{$tablette} {
           width: 65%;
+        }
+        @media #{$tablette2} {
+          margin-left: 0;
+          width: 100%;
         }
         /* title comic */
         p {
@@ -187,6 +195,12 @@ body {
     .container-width{
       ul{
         padding: 40px 0 0 0;
+        @media #{$mobile} {
+          text-align: center;
+        };
+        @media #{$tablette2} {
+          text-align: center;
+        };
         h2 {
           font-size: 2.5rem;
           font-weight: 700;
@@ -197,6 +211,9 @@ body {
           vertical-align: top;
           width: 180px;
           margin-right: $gutterItemsListing;
+          @media #{$tablette2} {
+            margin-right: 10px;
+          }
           img {
             height: 185px;
           }
