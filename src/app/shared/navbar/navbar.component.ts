@@ -11,8 +11,8 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   /*  Menu burger click*/
-  toggleState(){
-      let bool = this.isIn;
+  toggleState() {
+      const bool = this.isIn;
       this.isIn = bool === false ? true : false;
   }
 
