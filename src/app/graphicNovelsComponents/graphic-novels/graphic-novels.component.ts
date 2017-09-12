@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MarvelService} from "../../service/marvel.service";
+import {MarvelService} from '../../shared/service/marvel.service';
 
 @Component({
   selector: 'app-graphic-novel',
-  templateUrl: './graphics-novel.component.html',
-  styleUrls: ['./graphics-novel.component.scss']
+  templateUrl: './graphic-novels.component.html',
+  styleUrls: ['./graphic-novels.component.scss']
 })
-export class GraphicsNovelComponent implements OnInit {
+export class GraphicNovelsComponent implements OnInit {
     public graphics = [];
     loading: boolean = false;
     p: number = 1;

@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { GraphicNovelComponent } from './graphics-novel.component';
+import { GraphicNovelComponent } from './graphic-novels.component';
 
 describe('GraphicNovelComponent', () => {
   let component: GraphicNovelComponent;

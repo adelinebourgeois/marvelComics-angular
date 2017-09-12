@@ -1,9 +1,11 @@
-import {Routes} from "@angular/router";
-import {ComicsComponent} from "./ComicsComponents/comics/comics.component";
-import {ComicComponent} from "./ComicsComponents/comic/comic.component";
-import {AllCharactersComponent} from "./CharactersComponents/all-characters/all-characters.component";
-import {GraphicsNovelComponent} from "./GraphicsNovelComponenents/graphics-novel/graphics-novel.component";
-import {GraphicNovelComponent} from "./GraphicsNovelComponenents/graphic-novel/graphic-novel.component";
+import {Routes} from '@angular/router';
+
+import {ComicsComponent} from './comicsComponents/comics/comics.component';
+import {GraphicNovelsComponent} from './graphicNovelsComponents/graphic-novels/graphic-novels.component';
+import {GraphicNovelComponent} from './graphicNovelsComponents/graphic-novel/graphic-novel.component';
+import {ComicComponent} from './comicsComponents/comic/comic.component';
+import {AllCharactersComponent} from './charactersComponents/all-characters/all-characters.component';
+
 
 export const routes: Routes = [
     {
@@ -15,7 +17,7 @@ export const routes: Routes = [
     },
     {
         path: 'graphics-novel',
-        component: GraphicsNovelComponent
+        component: GraphicNovelsComponent
     },
     {
         path: 'graphic-novel/:id',

@@ -5,11 +5,11 @@
       <app-loader [loading]="loading"></app-loader>
     </div>
     <li *ngFor="let graphic of graphics | paginate: { itemsPerPage: 20, currentPage: p }">
-      <a href="/graphic-novel/{{graphic.id}}">
+      <a routerLink="/graphic-novel/{{graphic.id}}">
         <img src="{{graphic.thumbnail.path}}.{{graphic.thumbnail.extension}}"/>
       </a>
       <p>{{graphic.title}}</p>
-      <a href="/graphic-novel/{{graphic.id}}" class="detail button">Détails</a>
+      <a routerLink="/graphic-novel/{{graphic.id}}" class="detail button">Détails</a>
     </li>
 
     <pagination-controls (pageChange)="p = $event"></pagination-controls>

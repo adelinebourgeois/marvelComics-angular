@@ -10,17 +10,17 @@ import { routes } from './routes';
 
 import { AppComponent } from './app.component';
 
-import {MarvelService} from "./service/marvel.service";
+import {MarvelService} from "./shared/service/marvel.service";
 
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { ComicsComponent } from './ComicsComponents/comics/comics.component';
-import { ComicComponent } from './ComicsComponents/comic/comic.component';
-import { StorieComponent } from './ComicsComponents/storie/storie.component';
-import { CharactersComponent } from './ComicsComponents/characters/characters.component';
-import { AllCharactersComponent } from './CharactersComponents/all-characters/all-characters.component';
-import { GraphicsNovelComponent } from './GraphicsNovelComponenents/graphics-novel/graphics-novel.component';
-import { GraphicNovelComponent } from './GraphicsNovelComponenents/graphic-novel/graphic-novel.component';
-import { GraphicNovelCharactersComponent } from './GraphicsNovelComponenents/graphic-novel-characters/graphic-novel-characters.component';
+import { ComicsComponent } from './comicsComponents/comics/comics.component';
+import { ComicComponent } from './comicsComponents/comic/comic.component';
+import { StorieComponent } from './comicsComponents/storie/storie.component';
+import { CharactersComponent } from './comicsComponents/characters/characters.component';
+import { AllCharactersComponent } from './charactersComponents/all-characters/all-characters.component';
+import { GraphicNovelsComponent } from './graphicNovelsComponents/graphic-novels/graphic-novels.component';
+import { GraphicNovelComponent } from './graphicNovelsComponents/graphic-novel/graphic-novel.component';
+import { GraphicNovelCharactersComponent } from './graphicNovelsComponents/graphic-novel-characters/graphic-novel-characters.component';
 import {LoaderComponent} from "./shared/loader/loader.component";
 
 
@@ -35,7 +35,7 @@ import {LoaderComponent} from "./shared/loader/loader.component";
     CharactersComponent,
     AllCharactersComponent,
     NavbarComponent,
-    GraphicsNovelComponent,
+    GraphicNovelsComponent,
     GraphicNovelComponent,
     GraphicNovelCharactersComponent,
     LoaderComponent,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import {MarvelService} from "../../service/marvel.service";
+import {MarvelService} from '../../shared/service/marvel.service';
 
 
 @Component({
