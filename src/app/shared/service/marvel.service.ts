@@ -16,7 +16,7 @@ export class MarvelService {
 
   public getAllComics(): Observable<any[]> {
     return this.http.get(`${this.baseUrl}comics?ts=1&limit=100&hasDigitalIssue=true&apikey=${this.publicKey}&hash=${this.hash}`)
-        .map(this.extractData)
+        .map(this.extractData) //  will create a new array with the results of calling a provided function on every element in this array.
         .catch(this.handleError);
   }
 
@@ -47,7 +47,7 @@ export class MarvelService {
     /* GRAPHIC NOVEL */
 
     public getAllGraphicNovel(): Observable<any[]> {
-        return this.http.get(`${this.baseUrl}comics?ts=1&limit=100&format=graphic%20novel&orderBy=-title&apikey=${this.publicKey}&hash=${this.hash}`)
+      return this.http.get(`${this.baseUrl}comics?ts=1&limit=100&format=graphic%20novel&orderBy=-title&apikey=${this.publicKey}&hash=${this.hash}`)
             .map(this.extractData)
             .catch(this.handleError);
     }
@@ -65,14 +65,13 @@ export class MarvelService {
     }
 
   extractData(res: Response) {
-    let body = res.json();
+    const body = res.json();
     return body.data.results || {};
   }
 
-  handleError(error: any){
-    let errorMsg = (error.message) ? error.message:
-        error.status ? `${error.status} - ${error.statusText}` : 'server error';
-        return Observable.throw(errorMsg);
+  handleError(error: any) {
+    const errorMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'server error';
+    return Observable.throw(errorMsg);
   }
 
 
